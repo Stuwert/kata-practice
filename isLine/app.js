@@ -1,11 +1,13 @@
 function onLine(points){
-  if (arguments.length < 2){
+  if (points.length < 2){
     return false;
   }
-  var m = (arguments[0][1] - arguments[1][1]) / (arguments[0][0] - arguments[1][0]);
-  var b = arguments[0][1] - m * arguments[0][0]
-  for(var i = 2; i < arguments.length; i++){
-    if(arguments[i][1] !== (arguments[i][0] * m + b)){
+  var m = (points[0][1] - points[1][1]) / (points[0][0] - points[1][0]);
+  var b = points[0][1] - m * points[0][0]
+  for(var i = 2; i < points.length; i++){
+    if(b && points[i][1] !== (points[i][0] * m + b)){
+      return false;
+    }else if(points[i][0] !== points[1][0]){
       return false;
     }
   }
@@ -13,4 +15,4 @@ function onLine(points){
 }
 
 
-console.log(onLine([1, 2], [-3, -14], [22, 9]));
+console.log(onLine([1, 2], [1, 4], [1, 7]));
