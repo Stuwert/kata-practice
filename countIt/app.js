@@ -14,6 +14,8 @@ module.exports = function(strng){
     return that.obj[key];
   }
   strng.split("").forEach(function(char){
-    that.addValue(char);
+    if (char != " " && char != "."){
+      that.addValue(char);
+    }
   })
 }
