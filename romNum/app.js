@@ -10,7 +10,6 @@ var romanNumeralsObject = {
 
 
 module.exports = function(romanNumerals){
-  console.log(romanNumerals);
   var letterArr = romanNumerals.split("");
   var total = 0;
   letterArr.forEach(function(item, i){
@@ -20,7 +19,6 @@ module.exports = function(romanNumerals){
       total += romanNumeralsObject[item];
     }
   })
-  console.log(total);
   return total;
 
 }

@@ -21,6 +21,7 @@ module.exports = [
   [782, 'DCCLXXXII'],
   [870, 'DCCCLXX'],
   [941, 'CMXLI'],
+  [999, 'CMXCIX'],
   [1043, 'MXLIII'],
   [1110, 'MCX'],
   [1226, 'MCCXXVI'],
