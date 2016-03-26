@@ -46,25 +46,26 @@ var square7 = [
 
 
 describe('diagSum', function(){
+  
   it('should sum up all of the diagonals in an array of arrays', function(){
-    diagSum(square1).should.equal(4)
+    diagSum.reduceSquare(square1).should.equal(4)
   })
   it('should work with an array of length 5', function(){
-    diagSum(square2).should.equal(19)
+    diagSum.reduceSquare(square2).should.equal(19)
   })
   it('should work with negative numbers', function(){
-    diagSum(square3).should.equal(1);
+    diagSum.reduceSquare(square3).should.equal(1);
   })
   it('should return false if the array has length 0', function(){
-    diagSum(square4).should.be.NaN;
+    diagSum.reduceSquare(square4).should.be.NaN;
   })
   it('should return false if an array index is empty', function(){
-    diagSum(square5).should.be.NaN;
+    diagSum.reduceSquare(square5).should.be.NaN;
   })
   it('should return false if an array in an index has a length smaller than the parent array', function(){
-    diagSum(square6).should.be.NaN;
+    diagSum.reduceSquare(square6).should.be.NaN;
   })
   it('should return false if an interior array has a longer length than the parent', function(){
-    diagSum(square7).should.be.NaN;
+    diagSum.reduceSquare(square7).should.be.NaN;
   })
 })

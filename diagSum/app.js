@@ -1,17 +1,22 @@
-module.exports = function(arr){
-  var start = 0;
-  if (arr.length < 1){
-    start = NaN;
-  }
-  for(var i = 0; i < arr.length; i++){
-    if(arr[i] === undefined){
-      start = NaN;
+module.exports = {
+  isSquare: function(arr){
+    if (arr.length < 1){
+      return false;
+    }
+    for(var i = 0; i < arr.length; i++){
+      if (arr[i] === undefined || arr[i].length !== arr.length){
+        return false;
+      }
+    }
+    return true;
+  },
+  reduceSquare: function(arr){
+    if(this.isSquare(arr)){
+      return arr.reduce(function(prev, curr, i){
+        return prev + curr[i];
+      }, 0)
+    }else{
+      return NaN;
     }
   }
-  return arr.reduce(function(prev, curr, i){
-    if(curr.length !== arr.length || curr === undefined){
-      return prev + NaN;
-    }
-    return prev + curr[i];
-  }, start)
 }
